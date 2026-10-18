@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>X-ray</title><link rel="stylesheet" href="/app.css"><script src="/app.js" defer></script></head>
+<body>
+<header><a class="brand" href="/" aria-label="X-ray 首页"><span class="brand-icon">X<span>↗</span></span><span>X-ray<span class="en">HARDWARE LAB</span></span></a><div class="header-right"><span class="dot"></span>REMOTE LAB<span class="divider"></span><span id="instance">连接板卡中</span></div></header>
+<main>
+<section class="intro"><div><p class="eyebrow">EXPERIMENT 07 / DISPLAY FORENSICS</p><h1>屏幕熄灭之后，<br>让信号<span>重新显影。</span></h1><p class="lede">旧显示板的维护图案一闪而过。<br>接上探针，找回屏幕没留下的东西。</p><a class="download" href="/attachments/x-ray-player.zip"><span>↓</span> 下载板卡资料 <small>RTL · 接口手册 · 预览 ROM</small></a></div>
+<div class="board" aria-label="LA-4 显示板示意"><div class="board-top"><span>X-ray LABS</span><span>REV 04</span></div><div class="board-traces"><span class="trace t1"></span><span class="trace t2"></span><span class="trace t3"></span><span class="trace t4"></span></div><div class="chip"><div class="chip-mark">LA-4</div><div>DISPLAY CONTROLLER</div><small>192 × 64 / DUAL BANK</small></div><div class="connectors"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="board-bottom"><span><b class="dot"></b> POWER ON</span><span>逻辑分析仪已接入</span></div></div></section>
+<section class="workspace">
+<div class="instrument"><div class="section-title"><span class="number">01</span><h2>配置采集</h2><span class="badge">LA-4</span></div><div class="probe-head"><span>探针通道</span><span id="probe-count">0 / 4</span></div><div id="probes" class="probes" aria-label="探针选择"></div>
+<div class="config-grid"><label>触发条件<select id="trigger"><option value="activity">DMA 活动</option><option value="clock">连续时钟</option><option value="vblank">场同步有效</option></select></label><label>起始事件<input id="start" type="number" min="0" max="32768" value="0"></label><label>采样深度<input id="count" type="number" min="1" max="1024" value="1024"></label></div>
+<p class="field-note" id="trigger-note">tx_valid 有效时记录候选事件；每次采集从同一上电状态重放。</p><button id="capture" class="primary">开始采集 <span>↗</span></button><p id="message" role="status" aria-live="polite">请选择需要观测的信号。</p></div>
+<div class="results"><div class="section-title"><span class="number">02</span><h2>采集记录</h2><span id="run-count" class="muted">本次会话 · 0 次</span></div><div id="empty" class="empty"><svg viewBox="0 0 240 72" aria-hidden="true"><path d="M0 49H30V19H63V49H97V19H130V49H164V19H199V49H240"/></svg><h3>等待第一束信号</h3><p>每次结果包含 VCD 波形与采集记录。<br>下载后可在 GTKWave 或脚本中分析。</p></div><div id="history"></div><div class="result-note"><span>↳</span><p>不同探针组合可对同一时刻重复观测。<br>请保留记录中的实例标识与绝对时间戳。</p></div></div>
+</section>
+<section class="notes"><div><span>192 × 64</span><small>单色显示面板</small></div><div><span>4 CHANNELS</span><small>每次可连接四组探针</small></div><div><span>1,024 SAMPLES</span><small>每次采集深度</small></div><div><span>REPLAYABLE</span><small>同一实例确定性重放</small></div></section>
+</main><footer><span>X-ray</span><span>细节藏在信号之间。</span><span>MISC · HARDWARE LAB</span></footer>
+</body></html>

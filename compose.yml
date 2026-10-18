@@ -1,0 +1,18 @@
+services:
+  x-ray:
+    build: .
+    image: x-ray:1.0
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      GZCTF_FLAG: "${GZCTF_FLAG:?Set GZCTF_FLAG in .env first}"
+    cpus: 0.5
+    mem_limit: 256m
+    pids_limit: 48
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "assertion_groups": 49,
+  "dynamic_instances": 3,
+  "wall_seconds": 15.95,
+  "simulator": "Icarus Verilog 12.0 / vvp",
+  "coverage": [
+    "actual RTL compilation",
+    "three dynamic flags including maximum length",
+    "HTTP-only official solve",
+    "four-probe cap and input validation",
+    "static/file route isolation",
+    "deterministic recapture",
+    "all three triggers",
+    "empty acquisition",
+    "concurrency bound",
+    "startup rejects missing flag"
+  ],
+  "not_run": [
+    "Docker image build/run (Docker unavailable in authoring environment)",
+    "GZCTF platform integration (no platform instance supplied)",
+    "human difficulty playtest",
+    "Browser visual/click testing (browser download unavailable); JS syntax and static routes checked"
+  ]
+}
