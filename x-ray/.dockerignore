@@ -1,0 +1,10 @@
+*
+!Dockerfile
+!rtl/
+!rtl/**
+!app/
+!app/**
+!player/
+!player/**
+!LICENSE
+**/__pycache__

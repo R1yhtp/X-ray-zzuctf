@@ -1,0 +1,9 @@
+X-ray / GZCTF Misc
+
+请先阅读 x-ray/PUBLISH_GHCR.md。
+把 x-ray 目录内的文件和目录上传到 GitHub 私有仓库，运行 Actions 中 Build and publish GHCR image。
+默认镜像路径 zzu2026/x-ray，标签 1.0；实际完整地址在发布成功后的 Summary 中显示。
+服务端口 8000/TCP，动态 flag 模板 zzuctf{[GUID]}。
+
+选手只发 x-ray/x-ray-player.zip，官方解法与 WP 位于 organizer。
+当前交付为自动构建发布工程，镜像需要运行发布工作流后生成。

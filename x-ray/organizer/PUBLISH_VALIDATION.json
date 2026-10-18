@@ -1,0 +1,7 @@
+{
+  "workflow_yaml": "parsed",
+  "shell_steps": "bash -n passed",
+  "image_reference": "normalization and injection rejection passed",
+  "smoke_helper": "real RTL and HTTP recovery passed using a local subprocess server",
+  "docker_build_run_push": "not run: Docker and authenticated GitHub/GHCR connection unavailable"
+}
