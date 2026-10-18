@@ -1,12 +1,9 @@
 # X-ray
 
-GZCTF 动态容器 Misc，软硬件交叉 / SystemVerilog / 逻辑分析仪 / VCD。
-设计定位为中高难；尚未经过真人赛测，实际难度需根据参赛群体调整。
+容器 Misc，软硬件交叉 / SystemVerilog / 逻辑分析仪 / VCD。
+设计定位为中高难
 
 **需要 `ghcr.io/...:版本` 镜像地址：优先看 `PUBLISH_GHCR.md`。**
-工程已附 GitHub Actions，可在 GitHub 自动构建、通关检查并发布镜像，不需要本地 Docker。
-
-## 一句话题面
 
 > 旧显示板的维护图案一闪而过。接上探针，找回屏幕没留下的东西。
 
@@ -44,8 +41,7 @@ sh tools/build_local.sh
 GZCTF_FLAG='zzuctf{local_scope_test_4b7d1c29}' python3 app/server.py
 ```
 
-服务端只用 Python 标准库，不需要 pip 安装依赖。
-`IVERILOG`、`VVP`、`SIM_EXECUTABLE` 可用于指定本地仿真工具路径；线上无需设置。
+`IVERILOG`、`VVP`、`SIM_EXECUTABLE` 可用于指定本地仿真工具路径
 
 ## GZCTF 配置
 
@@ -66,7 +62,7 @@ GZCTF 在容器启动时注入 `GZCTF_FLAG`。本程序要求 `zzuctf{}` 格式�
 花括号内支持 1～80 个英文字母、数字、下划线或连字符；上述 GUID 模板受支持。
 未设置或格式错误时启动失败，避免意外用演示 flag 开赛。
 
-构建并推送（将示例仓库改成你自己的）：
+构建并推送（）：
 
 ```bash
 docker build --platform linux/amd64 -t x-ray:1.0 .
@@ -89,7 +85,7 @@ docker save -o x-ray-image.tar x-ray:1.0
 
 ## 文件分发
 
-- **选手：** 题面、平台启动的环境、`x-ray-player.zip`。
+- **选手：** 题面、平台启动的环境
 - **主办方：** 本完整工程及 `organizer/`；请保留解法和测试资料。
 - 环境也可直接下载选手附件，因此外部平台无需额外挂文件也能开题。
 - `.dockerignore` 采用允许清单，官方解法与测试不会进入镜像。
@@ -101,7 +97,6 @@ python3 tests/integration.py
 ```
 
 详细出题原理、非预期解审查范围与可调整项见 `organizer/WRITEUP.md`。
-发布前在实际 GZCTF 上复测镜像拉取、端口转发、动态 flag 与资源限额。
 
 ## 参考与归属
 
